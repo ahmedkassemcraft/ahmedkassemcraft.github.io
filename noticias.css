@@ -167,3 +167,46 @@ nav a:hover {
   font-style: italic;
   margin: 20px 0;
 }
+/* Comments */
+.comments {
+  margin-top: 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.comments h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.comments form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.comments form input[type="text"], .comments form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.comments form textarea {
+  height: 150px;
+}
+
+.comments form input[type="submit"] {
+  background-color: #0072c6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.comments form input[type="submit"]:hover {
+  background-color: #dc291e;
+}
