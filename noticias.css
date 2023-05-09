@@ -1,0 +1,82 @@
+/* Establece el estilo para el cuerpo de la página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+}
+
+/* Establece los estilos para los encabezados */
+header {
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Establece los estilos para la barra de navegación */
+nav {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Establece los estilos para la sección principal */
+main {
+  padding: 20px;
+}
+
+/* Establece los estilos para la columna lateral */
+aside {
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Establece los estilos para los enlaces */
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff0000;
+  text-decoration: underline;
+}
+
+/* Establece los estilos para los párrafos */
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
