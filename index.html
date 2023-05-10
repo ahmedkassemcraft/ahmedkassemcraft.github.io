@@ -1,101 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <title>Noticias del día</title>
-    <link rel="stylesheet" href="noticias.css">
-  </head>
-  <body>
-    <div id="wrapper">
-      <header>
-        <h1>Noticias del día</h1>
-        <nav>
-          <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Política</a></li>
-            <li><a href="#">Economía</a></li>
-            <li><a href="#">Deportes</a></li>
-            <li><a href="#">Cultura</a></li>
-            <li><a href="#">aviacion</a></li>
-            <li><a href="#">Opinión</a></li>
-            <li><a href="#">Contacto</a></li>
-          </ul>
-        </nav>
-      </header>
-      <main>
-        <article>
-          <h2>yandex el nabegador que no todos conocen</h2>
-          <p class="meta-info">ahmed kassem | 4 de mayo del 2023</p>
-          <img src="imagen1.jpg" alt="icono del nabegador">
-          <p>este nabegador de origen ruso es poco conocido en el resto
-             del mundo es un nabegador fiable seguro y rapido
-            con muchos servicios incluidos como coreo  electronico 
-            servicio de almacenamiento en la nube entre muchos otros</p>
-        </article>
-        <article>
-          <h2>petro revela algo que duke no pudo hacer junto a trump</h2>
-          <p class="meta-info">ahmed kassem | 4 de may de 2023</p>
-          <img src="imagen2.jpg" alt="Descripción de la imagen">
-          <p>petro estubo en españa en una entrevista con el medio español el pais y revelo que duke estava didpuesto a ayudar a Trump 
-            a intervenir en venezuela menos mal que no lo hisieron si se hubiera hecho estariamos en graves problemas
-          </p>
-          <section id="comentarios">
-  <h2>Comentarios</h2>
-  <form>
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre"><br>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email"><br>
-
-    <label for="comentario">Comentario:</label>
-    <textarea id="comentario" name="comentario"></textarea><br>
-
-    <button type="submit">Enviar</button>
-  </form>
-  
-  <div id="comentarios-anteriores">
-    <h3>Comentarios anteriores</h3>
-    <ul>
-      <li>Usuario 1: Este es un comentario muy interesante</li>
-      <li>Usuario 2: Gracias por compartir esta noticia</li>
-    </ul>
-  </div>
-</section>
-
-        </article>
-        <article>
-          <h2>se acabo</h2>
-          <p class="meta-info">ahmed kassem | 4 de may de 2023</p>
-          <img src="imagen3.jpg" alt="la oms">
-          <p> la organizacion mundial de la salud (oms) hace dos dias anuncio que el covid 19 ya no es una emergencia sanitaria
-            tiempo despues los gringos van a retirar todas las medidas de emergencia el 10 de mayo ustedes que opinan
-          </p>
-          <section id="comentarios">
-  <h2>Comentarios</h2>
-  <form>
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre"><br>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email"><br>
-
-    <label for="comentario">Comentario:</label>
-    <textarea id="comentario" name="comentario"></textarea><br>
-
-    <button type="submit">Enviar</button>
-  </form>
-  
-  <div id="comentarios-anteriores">
-    <h3>Comentarios anteriores</h3>
-    <ul>
-      <li>Usuario 1: Este es un comentario muy interesante</li>
-      <li>Usuario 2: Gracias por compartir esta noticia</li>
-    </ul>
-  </div>
-</section>
-          
-          <section id="publicar-articulo">
+<head>
+  <meta charset="UTF-8">
+  <title>Noticias del día</title>
+  <link rel="stylesheet" href="noticias.css">
+  <style>
+    /* Estilos adicionales */
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <header>
+      <h1>Noticias del día</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Política</a></li>
+          <li><a href="#">Economía</a></li>
+          <li><a href="#">Deportes</a></li>
+          <li><a href="#">Cultura</a></li>
+          <li><a href="#">aviacion</a></li>
+          <li><a href="#">Opinión</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="publicar-articulo">
         <h2>Publicar un artículo</h2>
         <form id="formulario-articulo" onsubmit="publicarArticulo(event)">
           <label for="titulo">Título:</label>
@@ -123,87 +54,21 @@
           <!-- Los artículos publicados se agregarán dinámicamente aquí -->
         </ul>
       </section>
-
-        </article>
-        </article>
-        <artículo>
-          <h2>la coronacion de carlos3</h2>
-          <p class="meta-info">ahmed kassem | 6 de may de 2023</p>
-          <img src="imagen4.jpg" alt="el rei carlos 3">
-          <p>el rei carlos 3 fue coronado el pasado 6 de mayo como rei del reino unido despues de un tiempo desde el fallecimiento de su antesesora la reina
-                issabel 2 hoy en dia muchos britanicos en especial los mas jobenes anelan el fin de la monarquia britanica para combertirse en  una repubica
-          ustedes que opinan</p>
-          <section id="comentarios">
-  <h2>Comentarios</h2>
-  <form>
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre"><br>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email"><br>
-
-    <label for="comentario">Comentario:</label>
-    <textarea id="comentario" name="comentario"></textarea><br>
-
-    <button type="submit">Enviar</button>
-  </form>
-  
-  <div id="comentarios-anteriores">
-    <h3>Comentarios anteriores</h3>
-    <ul>
-      <li>Usuario 1: Este es un comentario muy interesante</li>
-      <li>Usuario 2: Gracias por compartir esta noticia</li>
-    </ul>
+    </main>
+    <aside>
+      <h2>Últimas noticias</h2>
+      <ul>
+        <li><a href="#">oferta al ministerio de defensa</a></li>
+        <li><a href="#">Otro titular de la noticia</a></li>
+        <li><a href="#">Otro titular de la noticia</a></li>
+        <li><a href="#">Otro titular de la noticia</a></li>
+      </ul>
+    </aside>
+    <footer>
+      <p>&copy; 2023 Noticias del día. Todos los derechos reservados.</p>
+    </footer>
   </div>
-</section>
 
-      </article>
-      <article>
-          <h2>oferta al ministerio de defensa</h2>
-          <p class="meta-info">ahmed kassem | 9 de mayo del 2023</p>
-          <img src="imagen5.jpg" alt="casa de combate f16">
-          <p>el ministerio de defensa colombiano recibio una oferta de los gringos para modernizar sus casas
-          de combate con los f16 estan en negociacion para ver si cumplen sus nececidades en materia de eficiencia operacional
-         que opinan ustedes</p>
-         <section id="comentarios">
-  <h2>Comentarios</h2>
-  <form>
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre"><br>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email"><br>
-
-    <label for="comentario">Comentario:</label>
-    <textarea id="comentario" name="comentario"></textarea><br>
-
-    <button type="submit">Enviar</button>
-  </form>
-  
-  <div id="comentarios-anteriores">
-    <h3>Comentarios anteriores</h3>
-    <ul>
-      <li>Usuario 1: Este es un comentario muy interesante</li>
-      <li>Usuario 2: Gracias por compartir esta noticia</li>
-    </ul>
-  </div>
-</section>
-        
-        </article>
-      </main>
-      <aside>
-        <h2>Últimas noticias</h2>
-        <ul>
-          <li><a href="#">oferta al ministerio de defensa</a></li>
-          <li><a href="#">Otro titular de la noticia</a></li>
-          <li><a href="#">Otro titular de la noticia</a></li>
-          <li><a href="#">Otro titular de la noticia</a></li>
-        </ul>
-      </aside>
-      <footer>
-        <p>&copy; 2023 Noticias del día. Todos los derechos reservados.</p>
-      </footer>
-    </div>
-  </body>
+  <script src="noticias.js"></script>
+</body>
 </html>
-
