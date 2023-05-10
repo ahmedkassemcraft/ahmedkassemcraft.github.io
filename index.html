@@ -19,7 +19,7 @@
           <li><a href="#">Economía</a></li>
           <li><a href="#">Deportes</a></li>
           <li><a href="#">Cultura</a></li>
-          <li><a href="#">aviacion</a></li>
+          <li><a href="#">Aviación</a></li>
           <li><a href="#">Opinión</a></li>
           <li><a href="#">Contacto</a></li>
         </ul>
@@ -41,6 +41,9 @@
           <label for="contenido">Contenido:</label>
           <textarea id="contenido" name="contenido" required></textarea><br>
 
+          <label for="imagen">Imagen (URL):</label>
+          <input type="text" id="imagen" name="imagen"><br>
+
           <label for="password">Contraseña:</label>
           <input type="password" id="password" name="password" required><br>
 
@@ -58,7 +61,7 @@
     <aside>
       <h2>Últimas noticias</h2>
       <ul>
-        <li><a href="#">oferta al ministerio de defensa</a></li>
+        <li><a href="#">Oferta al Ministerio de Defensa</a></li>
         <li><a href="#">Otro titular de la noticia</a></li>
         <li><a href="#">Otro titular de la noticia</a></li>
         <li><a href="#">Otro titular de la noticia</a></li>
@@ -70,5 +73,11 @@
   </div>
 
   <script src="noticias.js"></script>
-</body>
-</html>
+  <script>
+    // Función para agregar un nuevo artículo a la lista
+    function agregarArticulo(titulo, autor, fecha, contenido, imagenURL) {
+      var listaArticulos = document.getElementById("lista");
+
+      var nuevoArticulo = document.createElement("li");
+      nuevoArticulo
+
