@@ -1,18 +1,24 @@
+/* Importa la fuente Franklin Gothic */
+@font-face {
+  font-family: 'Franklin Gothic';
+  src: url('franklin-gothic.woff2') format('woff2'),
+       url('franklin-gothic.woff') format('woff');
+}
+
 /* Establece el estilo para el cuerpo de la página */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #000000;
+  font-family: 'Franklin Gothic', Arial, sans-serif;
+  background-color: #ffffff;
   margin: 0;
   padding: 0;
-  color: #ffffff;
+  color: #333333;
 }
 
 /* Establece los estilos para los encabezados */
 header {
-  background-color: #ff0000;
+  background-color: #003264;
   color: #ffffff;
   padding: 10px;
-  text-align: center;
 }
 
 h1 {
@@ -29,10 +35,9 @@ h2 {
 
 /* Establece los estilos para la barra de navegación */
 nav {
-  background-color: #000000;
+  background-color: #003264;
   color: #ffffff;
   padding: 10px;
-  text-align: center;
 }
 
 nav ul {
@@ -58,20 +63,18 @@ main {
 
 /* Establece los estilos para la columna lateral */
 aside {
-  background-color: #ff0000;
-  color: #ffffff;
+  background-color: #f7f7f7;
   padding: 20px;
-  text-align: center;
 }
 
 /* Establece los estilos para los enlaces */
 a {
-  color: #ffffff;
+  color: #003264;
   text-decoration: none;
 }
 
 a:hover {
-  color: #ff0000;
+  color: #0071c1;
   text-decoration: underline;
 }
 
