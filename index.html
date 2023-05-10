@@ -175,6 +175,45 @@
         <p>&copy; 2023 Noticias del día. Todos los derechos reservados.</p>
       </footer>
     </div>
+  <script>
+      // Función para agregar un nuevo artículo a la lista
+      function agregarArticulo(titulo, autor, fecha, contenido) {
+        var listaArticulos = document.getElementById("lista-articulos");
+
+        var nuevoArticulo = document.createElement("li");
+        nuevoArticulo.innerHTML = "<h3>" + titulo + "</h3>" +
+          "<p>Autor: " + autor + "</p>" +
+          "<p>Fecha: " + fecha + "</p>" +
+          "<p>" + contenido + "</p>";
+
+        listaArticulos.appendChild(nuevoArticulo);
+      }
+
+      // Evento submit del formulario para publicar un artículo
+      document.getElementById("formulario-articulo").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        // Obtener los valores del formulario
+        var contrasena = document.getElementById("contrasena").value;
+        var titulo = document.getElementById("titulo").value;
+        var autor = document.getElementById("autor").value;
+        var fecha = document.getElementById("fecha").value;
+        var contenido = document.getElementById("contenido").value;
+
+        // Verificar la contraseña antes de agregar el artículo
+        if (contrasena === "203199") {
+          agregarArticulo(titulo, autor, fecha, contenido);
+          // Limpiar los campos del formulario después de agregar el artículo
+          document.getElementById("titulo").value = "";
+          document.getElementById("autor").value = "";
+          document.getElementById("fecha").value = "";
+          document.getElementById("contenido").value = "";
+        } else {
+          alert("Contraseña incorrecta. No se puede publicar el artículo.");
+        }
+      });
+</script>
+
   </body>
 </html>
 
