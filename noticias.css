@@ -77,6 +77,26 @@ a:hover {
   color: #0071c1;
   text-decoration: underline;
 }
+.articulo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.contenido-articulo {
+  margin-left: 20px;
+}
+
+.contenido-articulo h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.contenido-articulo p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
 
 /* Establece los estilos para los párrafos */
 p {
