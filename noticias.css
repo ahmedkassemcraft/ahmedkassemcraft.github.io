@@ -19,12 +19,33 @@ header {
   background-color: #003264;
   color: #ffffff;
   padding: 10px;
+  display: flex;
+  align-items: center;
 }
 
 h1 {
   font-size: 36px;
   font-weight: bold;
   margin: 0;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background-image: url('logo.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 .logo {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+h1 span {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 h2 {
@@ -77,6 +98,7 @@ a:hover {
   color: #0071c1;
   text-decoration: underline;
 }
+
 .articulo {
   display: flex;
   align-items: center;
@@ -97,6 +119,12 @@ a:hover {
   margin-bottom: 10px;
 }
 
+.contenido-articulo img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+}
 
 /* Establece los estilos para los párrafos */
 p {
