@@ -1,133 +1,79 @@
-/* Importa la fuente Franklin Gothic */
-@font-face {
-  font-family: 'Franklin Gothic';
-  src: url('franklin-gothic.woff2') format('woff2'),
-       url('franklin-gothic.woff') format('woff');
+/* Fuente */
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+
+/* Colores */
+:root {
+  --color-primario: #E2001A;
+  --color-fondo: #F6F6F6;
+  --color-texto: #333333;
 }
 
-/* Establece el estilo para el cuerpo de la página */
+/* Estilo general */
 body {
-  font-family: 'Franklin Gothic', Arial, sans-serif;
-  background-image:logotipo.png;
+  font-family: 'PT Sans', Arial, sans-serif;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
   margin: 0;
   padding: 0;
-  color: #333333;
 }
 
-/* Establece los estilos para los encabezados */
-header {
-  background-color: #003264;
-  color: #ffffff;
+/* Encabezado */
+#noticias-del-dia {
+  background-color: var(--color-primario);
   padding: 10px;
-  display: flex;
-  align-items: center;
+  color: white;
+  text-align: center;
 }
 
-h1 {
-  font-size: 36px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.logo {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-  background-image: url('logo.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-h1 .logo {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-h1 span {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-h2 {
+#noticias-del-dia h1 {
   font-size: 24px;
-  font-weight: bold;
   margin: 0;
 }
 
-/* Establece los estilos para la barra de navegación */
-nav {
-  background-color: #003264;
-  color: #ffffff;
+/* Barra de navegación */
+#barra-navegacion {
+  background-color: #333333;
   padding: 10px;
 }
 
-nav ul {
-  list-style: none;
+#barra-navegacion ul {
+  list-style-type: none;
   margin: 0;
   padding: 0;
-}
-
-nav li {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-nav a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-/* Establece los estilos para la sección principal */
-main {
-  padding: 20px;
-}
-
-/* Establece los estilos para la columna lateral */
-aside {
-  background-color: #f7f7f7;
-  padding: 20px;
-}
-
-/* Establece los estilos para los enlaces */
-a {
-  color: #003264;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #0071c1;
-  text-decoration: underline;
-}
-
-.articulo {
   display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+  justify-content: center;
 }
 
-.contenido-articulo {
-  margin-left: 20px;
+#barra-navegacion ul li {
+  margin: 0 10px;
 }
 
-.contenido-articulo h3 {
-  font-size: 18px;
-  margin-bottom: 5px;
+#barra-navegacion ul li a {
+  color: white;
+  text-decoration: none;
 }
 
-.contenido-articulo p {
-  font-size: 14px;
-  margin-bottom: 10px;
+/* Contenido principal */
+#contenido {
+  margin: 20px;
 }
 
-.contenido-articulo img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 4px;
+#contenido h2 {
+  font-size: 20px;
 }
 
-/* Establece los estilos para los párrafos */
-p {
-  font-size: 16px;
+#contenido p {
   line-height: 1.5;
+}
+
+/* Pie de página */
+#pie-pagina {
+  background-color: #333333;
+  padding: 10px;
+  color: white;
+  text-align: center;
+}
+
+#pie-pagina p {
+  margin: 0;
 }
