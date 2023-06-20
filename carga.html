@@ -2,60 +2,47 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Cargando...</title>
-  <style>
-    #carga-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background-color: #f5f5f5;
-    }
-
-    #aro-carga {
-      width: 100px;
-      height: 100px;
-      border: 10px solid #ddd;
-      border-top-color: red;
-      border-radius: 50%;
-      margin-top: 20px;
-      animation: carga-animacion 20s linear forwards;
-    }
-
-    @keyframes carga-animacion {
-      0% {
-        transform: rotate(0);
-        border-top-color: red;
-      }
-      50% {
-        transform: rotate(180deg);
-        border-top-color: green;
-      }
-      100% {
-        transform: rotate(360deg);
-        border-top-color: green;
-      }
-    }
-
-    #mensaje-carga {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    h1 {
-      font-size: 24px;
-    }
-  </style>
+  <title>Noticias del día</title>
+  <link rel="stylesheet" href="noticias.css">
 </head>
 <body>
-  <div id="carga-container">
-    <div id="mensaje-carga">
-      <h1>Cargando...</h1>
-      <div id="aro-carga"></div>
-    </div>
+  <div id="wrapper">
+    <header>
+      <h1>Noticias del día</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Política</a></li>
+          <li><a href="#">Economía</a></li>
+          <li><a href="#">Deportes</a></li>
+          <li><a href="#">Cultura</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- Aquí va el contenido de las noticias -->
+    </main>
+    <aside>
+      <h2>Últimas noticias</h2>
+      <ul>
+        <li><a href="#">Oferta al Ministerio de Defensa</a></li>
+        <li><a href="#">Las estaciones de policía están sobrepasadas de detenidos</a></li>
+        <li><a href="#">Otro titular de la noticia</a></li>
+        <li><a href="#">Se cumplen 2 semanas de protesta por el agua en una sucursal de Aguas de la Península en Maicao, La Guajira, y apenas ayer 17 de junio comenzaron las negociaciones para el restablecimiento en algunas partes de la ciudad</a></li>
+        <li><a href="#">El Congreso de la República aprueba una reforma para que la educación superior en universidades públicas sea gratis. En mi opinión, esto beneficia al pueblo en su mayoría para tener mejor acceso a la universidad y una educación superior de calidad.</a></li>
+      </ul>
+    </aside>
+    <section id="redes-sociales">
+      <h2>Sígueme en redes sociales</h2>
+      <ul>
+        <li><a href="https://www.tiktok.com/@akcraft2004"><img src="icono de tiktok.svg" alt="Icono de TikTok"> TikTok</a></li>
+        <li><a href="https://twitter.com/kassem_craft"><img src="icono de twitter.svg" alt="Icono de Twitter"> Twitter</a></li>
+      </ul>
+    </section>
+    <footer>
+      <p>&copy; 2023 Noticias del día - Ahmed Kassem</p>
+    </footer>
   </div>
-
   <script src="redireccionamiento.js"></script>
 </body>
 </html>
