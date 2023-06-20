@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Página de carga</title>
+    <style>
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding-top: 20px;
+      }
+      
+      h1 {
+        color: #333;
+      }
+      
+      .loader {
+        border: 16px solid #f3f3f3;
+        border-top: 16px solid #3498db;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+        margin: 0 auto;
+        margin-bottom: 20px;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+    <script>
+      // Redirige a la página principal (index.html) después de un tiempo de carga simulado
+      setTimeout(function() {
+        window.location.href = "index.html";
+      }, 3000); // Cambia el valor a la cantidad de milisegundos que deseas que dure la carga simulada
+    </script>
+  </head>
+  <body>
+    <h1>Cargando...</h1>
+    <div class="loader"></div>
+    <p>Espere un momento mientras se carga la página.</p>
+  </body>
+</html>
