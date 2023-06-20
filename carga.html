@@ -2,100 +2,53 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Cargando la pagina...</title>
+  <title>Cargando...</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-      margin: 0;
-      padding: 0;
-    }
-
-    #loader {
+    #carga-container {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
       height: 100vh;
-      background-color: #f7f7f7;
+      background-color: #f5f5f5;
     }
 
-    #dino {
-      width: 100px;
-      height: 100px;
-      background-image: url('dino.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      animation: dinoAnimation 1s infinite;
+    #barra-carga {
+      width: 300px;
+      height: 20px;
+      background-color: red;
+      border-radius: 10px;
+      margin-top: 20px;
+      animation: carga-animacion 20s linear forwards;
     }
 
-    @keyframes dinoAnimation {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-      100% { transform: translateY(0); }
+    @keyframes carga-animacion {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 100%;
+      }
     }
 
-    #message {
-      font-size: 24px;
-      font-weight: bold;
+    #mensaje-carga {
+      text-align: center;
       margin-top: 20px;
     }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
+    h1 {
+      font-size: 24px;
     }
   </style>
 </head>
 <body>
-  <div id="loader">
-    <div id="dino"></div>
+  <div id="carga-container">
+    <div id="mensaje-carga">
+      <h1>Cargando...</h1>
+      <div id="barra-carga"></div>
+    </div>
   </div>
-  <div id="message"></div>
 
-  <script>
-    var dinoElement = document.getElementById('dino');
-    var messageElement = document.getElementById('message');
-    var messageTimeout;
-
-    // Función para mostrar un mensaje al usuario
-    function showMessage(message) {
-      clearTimeout(messageTimeout);
-      messageElement.innerText = message;
-      messageElement.style.opacity = 1;
-      messageTimeout = setTimeout(function() {
-        messageElement.style.opacity = 0;
-      }, 3000);
-    }
-
-    // Simulación del progreso de carga
-    var progress = 0;
-    var interval = setInterval(function() {
-      progress += 5;
-      if (progress >= 100) {
-        clearInterval(interval);
-        progress = 100;
-        showMessage('¡Listo! Carga completa.');
-        // Redireccionar cuando se complete la carga
-        redirectToIndex();
-      }
-      updateDinoPosition();
-    }, 200);
-
-    // Actualizar la posición vertical del dinosaurio
-    function updateDinoPosition() {
-      var screenHeight = window.innerHeight;
-      var dinoHeight = dinoElement.offsetHeight;
-      var maxPosition = screenHeight - dinoHeight - 50; // 50px de margen inferior
-      var position = (progress / 100) * maxPosition;
-      dinoElement.style.transform = 'translateY(' + position + 'px)';
-    }
-
-    // Redireccionar al archivo index.html
-    function redirectToIndex() {
-      setTimeout(function() {
-        window.location.href = 'index.html';
-      }, 2000);
-    }
-  </script>
+  <script src="redireccionamiento.js"></script>
 </body>
 </html>
