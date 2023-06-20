@@ -1,45 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <title>Cargando...</title>
-    <style>
-      #loader {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 24px;
-        font-weight: bold;
+<head>
+  <meta charset="UTF-8">
+  <title>Cargando pagina...</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+
+    #loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f7f7f7;
+    }
+
+    #dino {
+      width: 100px;
+      height: 100px;
+      background-image: url('dino.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      animation: dinoAnimation 1s infinite;
+    }
+
+    @keyframes dinoAnimation {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+    #message {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div id="loader">
+    <div id="dino"></div>
+  </div>
+  <div id="message"></div>
+
+  <script>
+    var dinoElement = document.getElementById('dino');
+    var messageElement = document.getElementById('message');
+    var messageTimeout;
+
+    // Función para mostrar un mensaje al usuario
+    function showMessage(message) {
+      clearTimeout(messageTimeout);
+      messageElement.innerText = message;
+      messageElement.style.opacity = 1;
+      messageTimeout = setTimeout(function() {
+        messageElement.style.opacity = 0;
+      }, 3000);
+    }
+
+    // Simulación del progreso de carga
+    var progress = 0;
+    var interval = setInterval(function() {
+      progress += Math.random() * 10;
+      if (progress >= 100) {
+        clearInterval(interval);
+        progress = 100;
+        showMessage('¡Listo! Carga completa.');
+        // Redireccionar cuando se complete la carga
+        redirectToIndex();
       }
-    </style>
-    <script src="redireccionamiento.js"></script>
-  </head>
-  <body>
-    <div id="loader">
-      Cargando... <span id="progress"></span>
-    </div>
+      updateDinoPosition();
+    }, 500);
 
-    <script>
-      var progressElement = document.getElementById('progress');
+    // Actualizar la posición vertical del dinosaurio
+    function updateDinoPosition() {
+      var screenHeight = window.innerHeight;
+      var dinoHeight = dinoElement.offsetHeight;
+      var maxPosition = screenHeight - dinoHeight - 50; // 50px de margen inferior
+      var position = (progress / 100) * maxPosition;
+      dinoElement.style.transform = 'translateY(' + position + 'px)';
+    }
 
-      function updateProgress(percentage) {
-        progressElement.textContent = percentage + '%';
-      }
-
-      // Simulación del progreso de carga
-      var progress = 0;
-      var interval = setInterval(function() {
-        progress += Math.random() * 10;
-        if (progress >= 100) {
-          clearInterval(interval);
-          progress = 100;
-          // Redireccionar cuando se complete la carga
-          redirectToIndex();
-        }
-        updateProgress(Math.round(progress));
-      }, 500);
-    </script>
-  </body>
+    // Redireccionar al archivo index.html
+    function redirectToIndex() {
+      setTimeout(function() {
+        window.location.href = 'index.html';
+      }, 2000);
+    }
+  </script>
+</body>
 </html>
