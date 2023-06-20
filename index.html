@@ -1,90 +1,149 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Noticias del día</title>
-  <link rel="stylesheet" href="noticias.css">
-  <style>
-    /* Estilos adicionales aquí */
-  </style>
-  <script src="redireccionamiento.js"></script>
-</head>
-<body onload="redireccionar()">
-  <div id="wrapper">
-    <header>
-      <h1>Noticias del día</h1>
-      <nav>
+  <head>
+    <meta charset="UTF-8">
+    <title>Noticias del día</title>
+    <link rel="stylesheet" href="noticias.css">
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h1>Noticias del día</h1>
+        <nav>
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Política</a></li>
+            <li><a href="#">Economía</a></li>
+            <li><a href="#">Deportes</a></li>
+            <li><a href="#">Cultura</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <article>
+          <h2>yandex el nabegador que no todos conocen</h2>
+          <p class="meta-info">ahmed kassem | 4 de mayo del 2023</p>
+          <img src="imagen1.jpg" alt="icono del nabegador">
+          <p>este nabegador de origen ruso es poco conocido en el resto
+            del mundo es un nabegador fiable seguro y rapido
+            con muchos servicios incluidos como coreo electronico
+            servicio de almacenamiento en la nube entre muchos otros</p>
+        </article>
+        <article>
+          <h2>petro revela algo que duke no pudo hacer junto a trump</h2>
+          <p class="meta-info">ahmed kassem | 4 de may de 2023</p>
+          <img src="imagen2.jpg" alt="Descripción de la imagen">
+          <p>petro estubo en españa en una entrevista con el medio español el pais y revelo que duke estava didpuesto a ayudar a Trump
+            a intervenir en venezuela menos mal que no lo hisieron si se hubiera hecho estariamos en graves problemas
+          </p>
+          <section id="comentarios">
+            <h2>Comentarios</h2>
+            <form>
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" name="nombre"><br>
+
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email"><br>
+
+              <label for="comentario">Comentario:</label>
+              <textarea id="comentario" name="comentario"></textarea><br>
+
+              <button type="submit">Enviar</button>
+            </form>
+
+            <div id="comentarios-anteriores">
+              <h3>Comentarios anteriores</h3>
+              <ul>
+                <li>Usuario 1: Este es un comentario muy interesante</li>
+                <li>Usuario 2: Gracias por compartir esta noticia</li>
+              </ul>
+            </div>
+          </section>
+
+        </article>
+        <article>
+          <h2>se acabo</h2>
+          <p class="meta-info">ahmed kassem | 4 de may de 2023</p>
+          <img src="imagen3.jpg" alt="la oms">
+          <p> la organizacion mundial de la salud (oms) hace dos dias anuncio que el covid 19 ya no es una emergencia sanitaria
+            tiempo despues los gringos van a retirar todas las medidas de emergencia el 10 de mayo ustedes que opinan
+          </p>
+          <section id="comentarios">
+            <h2>Comentarios</h2>
+            <form>
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" name="nombre"><br>
+
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email"><br>
+
+              <label for="comentario">Comentario:</label>
+              <textarea id="comentario" name="comentario"></textarea><br>
+
+              <button type="submit">Enviar</button>
+            </form>
+
+            <div id="comentarios-anteriores">
+              <h3>Comentarios anteriores</h3>
+              <ul>
+                <li>Usuario 1: Este es un comentario muy interesante</li>
+                <li>Usuario 2: Gracias por compartir esta noticia</li>
+              </ul>
+            </div>
+          </section>
+
+        </article>
+        <article>
+          <h2>la coronacion de carlos3</h2>
+          <p class="meta-info">ahmed kassem | 6 de may de 2023</p>
+          <img src="imagen4.jpg" alt="el rei carlos 3">
+          <p>el rei carlos 3 fue coronado el pasado 6 de mayo como rei del reino unido despues de un tiempo desde el fallecimiento de su antesesora la reina
+            issabel 2 hoy en dia muchos britanicos en especial los
+
+mas jobenes anelan el fin de la monarquia britanica para combertirse en una repubica
+            ustedes que opinan</p>
+          <section id="comentarios">
+            <h2>Comentarios</h2>
+            <form>
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" name="nombre"><br>
+
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email"><br>
+
+              <label for="comentario">Comentario:</label>
+              <textarea id="comentario" name="comentario"></textarea><br>
+
+            </form>
+          </section>
+
+        </article>
+
+      </main>
+      <aside>
+        <h2>Últimas noticias</h2>
         <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Política</a></li>
-          <li><a href="#">Economía</a></li>
-          <li><a href="#">Deportes</a></li>
-          <li><a href="#">Cultura</a></li>
+          <li><a href="#">oferta al ministerio de defensa</a></li>
+          <li><a href="#">las estaciones de policia estan sobrepasadas de detenidos</a></li>
+          <li><a href="#">Otro titular de la noticia</a></li>
+          <li><a href="#"> se cumplen 2 semanas de protesta por el
+              agua en una sucursal de aguas de la peninsula en maicao la guajira y apenas ayer 17 de junio empesaron las negociaciones par el
+              restablecimiento de estaen algunas
+              partes de la ciudad
+            <li><a href="#">el congreso de la republica aprueba una reforma para que la educacion superion en univercidades publicas sea gratis 😎 en mi opinión esto beneficia al pueblo en su mayoría para tener mejor acceso a la universidad para una educación superior
+          </a></li>
         </ul>
-      </nav>
-    </header>
-    <main>
-      <article>
-        <h2>yandex el navegador que no todos conocen</h2>
-        <p class="meta-info">Autor: Ahmed Kassem | Fecha: 4 de mayo de 2023</p>
-        <img src="imagen1.jpg" alt="icono del navegador">
-        <p>Este navegador de origen ruso es poco conocido en el resto del mundo. Es un navegador confiable, seguro y rápido, con muchos servicios incluidos como correo electrónico, servicio de almacenamiento en la nube, entre otros.</p>
-      </article>
-      <article>
-        <h2>petro revela algo que duque no pudo hacer junto a Trump</h2>
-        <p class="meta-info">Autor: Ahmed Kassem | Fecha: 4 de mayo de 2023</p>
-        <img src="imagen2.jpg" alt="Descripción de la imagen">
-        <p>Petro estuvo en España en una entrevista con el medio español El País y reveló que Duque estaba dispuesto a ayudar a Trump a intervenir en Venezuela. Menos mal que no lo hicieron, si se hubiera hecho estaríamos en graves problemas.</p>
-        <section id="comentarios">
-          <h2>Comentarios</h2>
-          <form>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required><br>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
-
-            <label for="comentario">Comentario:</label>
-            <textarea id="comentario" name="comentario" required></textarea><br>
-
-            <button type="submit">Enviar</button>
-          </form>
-
-          <div id="comentarios-anteriores">
-            <h3>Comentarios anteriores</h3>
-            <ul>
-              <li>Usuario 1: Este es un comentario muy interesante</li>
-              <li>Usuario 2: Gracias por compartir esta noticia</li>
-            </ul>
-          </div>
-        </section>
-      </article>
-      <article>
-        <h2>se acabo</h2>
-        <p class="meta-info">Autor: Ahmed Kassem | Fecha: 4 de mayo de 2023</p>
-        <img src="imagen3.jpg" alt="Descripción de la imagen">
-        <p>Según las últimas declaraciones de los expertos, la Organización Mundial de la Salud ha declarado oficialmente el fin de la pandemia de COVID-19. Esto marca un hito importante en la lucha global contra el virus. Aunque la situación sigue siendo monitoreada de cerca, se ha logrado un progreso significativo en la contención del virus.</p>
-      </article>
-    </main>
-    <aside>
-      <h2>Últimas noticias</h2>
-      <ul>
-        <li><a href="#">yandex el navegador que no todos conocen</a></li>
-        <li><a href="#">petro revela algo que duque no pudo hacer junto a Trump</a></li>
-        <li><a href="#">se acabo</a></li>
-      </ul>
-    </aside>
-    <section id="redes-sociales">
-      <h2>Sígueme en redes sociales</h2>
-      <ul>
-        <li><a href="#"><img src="icono-tiktok.png" alt="Icono de TikTok"> TikTok</a></li>
-        <li><a href="#"><img src="icono-twitter.png" alt="Icono de Twitter"> Twitter</a></li>
-      </ul>
-    </section>
-    <footer>
-      <p>&copy; 2023 Noticias del día - Ahmed Kassem</p>
-    </footer>
-  </div>
-</body>
+      </aside>
+      <section id="redes-sociales">
+        <h2>Sígueme en redes sociales</h2>
+        <ul>
+          <li><a href="https://www.tiktok.com/@akcraft2004">TikTok</a></li>
+          <li><a href="https://twitter.com/kassem_craft">Twitter</a></li>
+        </ul>
+      </section>
+      <footer>
+        <p>&copy; 2023 Noticias del día - Ahmed Kassem</p>
+      </footer>
+    </div>
+  </body>
 </html>
