@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Cargando pagina...</title>
+  <title>Cargando la pagina...</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -70,7 +70,7 @@
     // Simulación del progreso de carga
     var progress = 0;
     var interval = setInterval(function() {
-      progress += Math.random() * 10;
+      progress += 5;
       if (progress >= 100) {
         clearInterval(interval);
         progress = 100;
@@ -79,7 +79,7 @@
         redirectToIndex();
       }
       updateDinoPosition();
-    }, 500);
+    }, 200);
 
     // Actualizar la posición vertical del dinosaurio
     function updateDinoPosition() {
