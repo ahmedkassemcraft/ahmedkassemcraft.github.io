@@ -2,45 +2,44 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8">
-    <title>Página de carga</title>
+    <title>Cargando...</title>
     <style>
-      body {
-        background-color: #f2f2f2;
-        font-family: Arial, sans-serif;
-        text-align: center;
-        padding-top: 20px;
-      }
-      
-      h1 {
-        color: #333;
-      }
-      
-      .loader {
-        border: 16px solid #f3f3f3;
-        border-top: 16px solid #3498db;
-        border-radius: 50%;
-        width: 120px;
-        height: 120px;
-        animation: spin 2s linear infinite;
-        margin: 0 auto;
-        margin-bottom: 20px;
-      }
-      
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+      #loader {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
       }
     </style>
-    <script>
-      // Redirige a la página principal (index.html) después de un tiempo de carga simulado
-      setTimeout(function() {
-        window.location.href = "index.html";
-      }, 3000); // Cambia el valor a la cantidad de milisegundos que deseas que dure la carga simulada
-    </script>
+    <script src="redireccionamiento.js"></script>
   </head>
   <body>
-    <h1>Cargando...</h1>
-    <div class="loader"></div>
-    <p>Espere un momento mientras se carga la página.</p>
+    <div id="loader">
+      Cargando... <span id="progress"></span>
+    </div>
+
+    <script>
+      var progressElement = document.getElementById('progress');
+
+      function updateProgress(percentage) {
+        progressElement.textContent = percentage + '%';
+      }
+
+      // Simulación del progreso de carga
+      var progress = 0;
+      var interval = setInterval(function() {
+        progress += Math.random() * 10;
+        if (progress >= 100) {
+          clearInterval(interval);
+          progress = 100;
+          // Redireccionar cuando se complete la carga
+          redirectToIndex();
+        }
+        updateProgress(Math.round(progress));
+      }, 500);
+    </script>
   </body>
 </html>
