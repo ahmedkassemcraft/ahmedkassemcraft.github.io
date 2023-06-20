@@ -9,7 +9,7 @@
 /* Establece el estilo para el cuerpo de la página */
 body {
   font-family: 'Franklin Gothic', Arial, sans-serif;
-  background-color: #ffffff;
+  background-color: #f1f1f1;
   margin: 0;
   padding: 0;
   color: #333333;
@@ -17,7 +17,7 @@ body {
 
 /* Establece los estilos para los encabezados */
 header {
-  background-color: #003264;
+  background-color: #0073bb;
   color: #ffffff;
   padding: 10px;
 }
@@ -36,7 +36,7 @@ h2 {
 
 /* Establece los estilos para la barra de navegación */
 nav {
-  background-color: #003264;
+  background-color: #0073bb;
   color: #ffffff;
   padding: 10px;
 }
@@ -64,18 +64,18 @@ main {
 
 /* Establece los estilos para la columna lateral */
 aside {
-  background-color: #f7f7f7;
+  background-color: #ffffff;
   padding: 20px;
 }
 
 /* Establece los estilos para los enlaces */
 a {
-  color: #003264;
+  color: #0073bb;
   text-decoration: none;
 }
 
 a:hover {
-  color: #0071c1;
+  color: #005493;
   text-decoration: underline;
 }
 
@@ -84,3 +84,4 @@ p {
   font-size: 16px;
   line-height: 1.5;
 }
+
