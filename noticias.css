@@ -1,9 +1,8 @@
-
 /* Importa la fuente Franklin Gothic */
 @font-face {
   font-family: 'Franklin Gothic';
   src: url('franklin-gothic.woff2') format('woff2'),
-       url('franklin-gothic.woff') format('woff');
+    url('franklin-gothic.woff') format('woff');
 }
 
 /* Establece el estilo para el cuerpo de la página */
@@ -85,3 +84,37 @@ p {
   line-height: 1.5;
 }
 
+/* Estilos para los botones de "Me gusta" y "No me gusta" */
+.like-btn,
+.dislike-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.like-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.dislike-btn {
+  background-color: #FF0000;
+  color: white;
+}
+
+.like-btn:hover,
+.dislike-btn:hover {
+  background-color: #45a049;
+}
+
+/* Estilos adicionales para los botones de "Me gusta" y "No me gusta" */
+.like-btn {
+  margin-right: 10px;
+}
+
+.dislike-btn {
+  margin-left: 10px;
+}
