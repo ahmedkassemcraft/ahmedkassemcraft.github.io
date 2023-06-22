@@ -2,7 +2,7 @@
 @font-face {
   font-family: 'Franklin Gothic';
   src: url('franklin-gothic.woff2') format('woff2'),
-    url('franklin-gothic.woff') format('woff');
+       url('franklin-gothic.woff') format('woff');
 }
 
 /* Establece el estilo para el cuerpo de la página */
@@ -117,4 +117,30 @@ p {
 
 .dislike-btn {
   margin-left: 10px;
+}
+
+/* Estilos para los contadores de "Me gusta" y "No me gusta" */
+.like-count,
+.dislike-count {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Establece los estilos para el contador de "Me gusta" */
+.like-count {
+  color: #4CAF50;
+}
+
+/* Establece los estilos para el contador de "No me gusta" */
+.dislike-count {
+  color: #FF0000;
+}
+
+/* Estilos para la sección de los artículos */
+#likes-dislikes {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ffffff;
 }
