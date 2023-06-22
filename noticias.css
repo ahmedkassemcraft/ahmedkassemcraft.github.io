@@ -12,7 +12,7 @@ body {
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 36px;
   margin: 0;
   padding: 10px 0;
 }
@@ -63,8 +63,9 @@ section#likes-dislikes {
   margin-top: 10px;
 }
 
-button.like-btn, button.dislike-btn {
-  background-color: #f0f0f0;
+button.like-btn,
+button.dislike-btn {
+  background-color: #ddd;
   border: none;
   color: #000;
   padding: 5px 10px;
@@ -72,7 +73,8 @@ button.like-btn, button.dislike-btn {
   margin-right: 10px;
 }
 
-span.like-count, span.dislike-count {
+span.like-count,
+span.dislike-count {
   font-weight: bold;
   margin-right: 10px;
 }
@@ -102,8 +104,7 @@ section#redes-sociales {
 }
 
 section#redes-sociales h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 20px;
 }
 
 section#redes-sociales ul {
@@ -115,15 +116,65 @@ section#redes-sociales li {
 }
 
 footer {
-  background-color: #f0f0f0;
+  background-color: #333;
+  color: #fff;
   padding: 10px;
   text-align: center;
   font-size: 14px;
 }
 
-/* Estilos para el contador de visitas */
+/* Estilos personalizados */
+
+/* Cambiar el color de fondo del header */
+header {
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+/* Cambiar el estilo del enlace en el aside */
+aside a {
+  text-decoration: underline;
+  color: blue;
+}
+
+/* Cambiar el estilo de la sección de últimas noticias */
+aside ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+/* Cambiar el estilo de los enlaces en la sección de últimas noticias */
+aside a {
+  color: #000;
+}
+
+/* Cambiar el estilo de la sección de redes sociales */
+section#redes-sociales {
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+section#redes-sociales h2 {
+  font-size: 20px;
+}
+
+section#redes-sociales ul {
+  list-style: none;
+  padding: 0;
+}
+
+section#redes-sociales li {
+  margin-bottom: 10px;
+}
+
+section#redes-sociales a {
+  text-decoration: none;
+  color: blue;
+}
+
+/* Cambiar el estilo del contador de visitas */
 .contador-visitas {
   font-weight: bold;
   font-size: 16px;
-  color: #000;
+  color: red;
 }
