@@ -144,5 +144,8 @@ footer {
 .contador-visitas {
   font-weight: bold;
   font-size: 16px;
-  color: #666;
+  color: #fff;
+  background-color: #cc0000;
+  padding: 10px;
+  text-align: center;
 }
