@@ -65,13 +65,19 @@ for (let i = 0; i < dislikeButtons.length; i++) {
   });
 }
  
+   let narrador;
+
     function narrarArticulo(titulo, autor, fecha, contenido) {
-      const narrador = new SpeechSynthesisUtterance();
+      narrador = new SpeechSynthesisUtterance();
       narrador.lang = 'es-ES';
-      
+
       narrador.text = `${titulo}. Escrito por ${autor}. Publicado el ${fecha}. ${contenido}`;
-      
+
       window.speechSynthesis.speak(narrador);
+    }
+
+    function detenerNarracion() {
+      window.speechSynthesis.cancel();
     }
 
 
