@@ -48,4 +48,46 @@ main {
 
 article {
   background-color: #fff;
-  padding: 20
+  padding: 20px;
+}
+
+/* Estilos de la ventana emergente */
+.popup-overlay {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0099cc;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content {
+  color: #fff;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+p {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+button {
+  background-color: #ccc;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  color: #000;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #aaa;
+}
