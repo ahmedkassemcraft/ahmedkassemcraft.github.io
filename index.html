@@ -18,9 +18,23 @@
     function closePopup() {
       document.getElementById("popupOverlay").style.display = "none";
     }
+   function toggleResponsive() {
+  var metaViewport = document.querySelector('meta[name="viewport"]');
+  
+  if (metaViewport) {
+    if (metaViewport.getAttribute('content') === 'width=device-width, initial-scale=1.0') {
+      metaViewport.setAttribute('content', 'width=1200');
+    } else {
+      metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+    }
+  }
+}
+
+document.getElementById('toggleResponsive').addEventListener('click', toggleResponsive);
   </script>
   <meta charset="UTF-8">
   <title>Noticias del día</title>
+ <button id="toggleResponsive">Activar/Desactivar Adaptación</button>
   <link rel="stylesheet" href="noticias.css">
 </head>
 <body>
