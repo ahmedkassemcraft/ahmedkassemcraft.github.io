@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<div class="popup-overlay" id="popupOverlay">
+    <div class="popup-content">
+      <h3>mensaje</h3>
+      <p>Bienvenido aquí podrá ver noticias importantes del mundo de ves en cuando esta pagina
+      se actualiza para agregar mas contenido para disfrutar de un medio de comunicacion libre y 100% independiente.</p>
+      <button onclick="closePopup()">Cerrar</button>
+    </div>
+  </div>
+
+  <script>
+    function openPopup() {
+      document.getElementById("popupOverlay").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("popupOverlay").style.display = "none";
+    }
+  </script>
   <meta charset="UTF-8">
   <title>Noticias del día</title>
   <link rel="stylesheet" href="noticias.css">
@@ -163,23 +181,5 @@
     <footer>
       <p>&copy; 2023 Noticias del Día. Todos los derechos reservados.</p>
     </footer>
-  </div>
-<div class="popup-overlay" id="popupOverlay">
-    <div class="popup-content">
-      <h3>Ventana emergente</h3>
-      <p>Bienvenido aquí podrá ver noticias importantes del mundo de ves en cuando esta pagina se actualiza para agregar mas contenido.</p>
-      <button onclick="closePopup()">Cerrar</button>
-    </div>
-  </div>
-
-  <script>
-    function openPopup() {
-      document.getElementById("popupOverlay").style.display = "flex";
-    }
-
-    function closePopup() {
-      document.getElementById("popupOverlay").style.display = "none";
-    }
-  </script>
 </body>
 </html>
