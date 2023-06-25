@@ -31,6 +31,40 @@
 }
 
 document.getElementById('toggleResponsive').addEventListener('click', toggleResponsive);
+// Obtener todos los elementos de botones y contadores
+const likeButtons = document.getElementsByClassName('like-btn');
+const dislikeButtons = document.getElementsByClassName('dislike-btn');
+const likeCounts = document.getElementsByClassName('like-count');
+const dislikeCounts = document.getElementsByClassName('dislike-count');
+
+// Agregar eventos de clic a los botones de "Me gusta"
+for (let i = 0; i < likeButtons.length; i++) {
+  likeButtons[i].addEventListener('click', function() {
+    // Obtener el contador correspondiente al botón actual
+    const count = likeCounts[i];
+    // Obtener el número actual de "Me gusta"
+    let currentCount = parseInt(count.textContent);
+    // Incrementar el contador en 1
+    currentCount++;
+    // Actualizar el número de "Me gusta" en el contador
+    count.textContent = currentCount;
+  });
+}
+
+// Agregar eventos de clic a los botones de "No me gusta"
+for (let i = 0; i < dislikeButtons.length; i++) {
+  dislikeButtons[i].addEventListener('click', function() {
+    // Obtener el contador correspondiente al botón actual
+    const count = dislikeCounts[i];
+    // Obtener el número actual de "No me gusta"
+    let currentCount = parseInt(count.textContent);
+    // Incrementar el contador en 1
+    currentCount++;
+    // Actualizar el número de "No me gusta" en el contador
+    count.textContent = currentCount;
+  });
+}
+
   </script>
   <meta charset="UTF-8">
   <title>Noticias del día</title>
