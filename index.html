@@ -64,6 +64,16 @@ for (let i = 0; i < dislikeButtons.length; i++) {
     count.textContent = currentCount;
   });
 }
+ 
+    function narrarArticulo(titulo, autor, fecha, contenido) {
+      const narrador = new SpeechSynthesisUtterance();
+      narrador.lang = 'es-ES';
+      
+      narrador.text = `${titulo}. Escrito por ${autor}. Publicado el ${fecha}. ${contenido}`;
+      
+      window.speechSynthesis.speak(narrador);
+    }
+
 
   </script>
   <meta charset="UTF-8">
