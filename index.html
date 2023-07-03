@@ -1,206 +1,249 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Prayer Clock</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="manifest" href="manifest.json">
-  <style>
-    body {
-      font-family: helvetica;
-      background-image: url('fondo.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: #fff;
-      margin: 0;
-      padding: 20px;
+<div class="popup-overlay" id="popupOverlay">
+  <div class="popup-content">
+    <h3>mensaje</h3>
+    <p>Bienvenido aquí podrás ver noticias importantes del país y del mundo. De vez en cuando esta página se actualiza para agregar más contenido y disfrutar de un medio de comunicación transparente, libre y 100% independiente. Si tienes alguna pregunta, ¡házmela saber en mis redes sociales! 😎</p>
+    <button onclick="closePopup()">Cerrar</button>
+  </div>
+</div>
+  </div>
+
+  <script>
+    function openPopup() {
+      document.getElementById("popupOverlay").style.display = "flex";
     }
 
-    h1 {
-      text-align: center;
+    function closePopup() {
+      document.getElementById("popupOverlay").style.display = "none";
+    }
+   function toggleResponsive() {
+  var metaViewport = document.querySelector('meta[name="viewport"]');
+  
+  if (metaViewport) {
+    if (metaViewport.getAttribute('content') === 'width=device-width, initial-scale=1.0') {
+      metaViewport.setAttribute('content', 'width=1200');
+    } else {
+      metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+    }
+  }
+}
+
+document.getElementById('toggleResponsive').addEventListener('click', toggleResponsive);
+// Obtener todos los elementos de botones y contadores
+const likeButtons = document.getElementsByClassName('like-btn');
+const dislikeButtons = document.getElementsByClassName('dislike-btn');
+const likeCounts = document.getElementsByClassName('like-count');
+const dislikeCounts = document.getElementsByClassName('dislike-count');
+
+// Agregar eventos de clic a los botones de "Me gusta"
+for (let i = 0; i < likeButtons.length; i++) {
+  likeButtons[i].addEventListener('click', function() {
+    // Obtener el contador correspondiente al botón actual
+    const count = likeCounts[i];
+    // Obtener el número actual de "Me gusta"
+    let currentCount = parseInt(count.textContent);
+    // Incrementar el contador en 1
+    currentCount++;
+    // Actualizar el número de "Me gusta" en el contador
+    count.textContent = currentCount;
+  });
+}
+
+// Agregar eventos de clic a los botones de "No me gusta"
+for (let i = 0; i < dislikeButtons.length; i++) {
+  dislikeButtons[i].addEventListener('click', function() {
+    // Obtener el contador correspondiente al botón actual
+    const count = dislikeCounts[i];
+    // Obtener el número actual de "No me gusta"
+    let currentCount = parseInt(count.textContent);
+    // Incrementar el contador en 1
+    currentCount++;
+    // Actualizar el número de "No me gusta" en el contador
+    count.textContent = currentCount;
+  });
+}
+ 
+   let narrador;
+
+    function narrarArticulo(titulo, autor, fecha, contenido) {
+      narrador = new SpeechSynthesisUtterance();
+      narrador.lang = 'es-ES';
+
+      narrador.text = `${titulo}. Escrito por ${autor}. Publicado el ${fecha}. ${contenido}`;
+
+      window.speechSynthesis.speak(narrador);
     }
 
-    #clock {
-      font-size: 48px;
-      text-align: center;
-      margin-bottom: 20px;
+    function detenerNarracion() {
+      window.speechSynthesis.cancel();
     }
 
-    #prayer-times {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      text-align: left;
-      color: white;
-      font-size: 24px;
-    }
 
-    #prayer-times h2 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    .prayer-time {
-      margin-bottom: 5px;
-    }
-
-    #livestream {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    iframe {
-      width: 80%;
-      max-width: 800px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    /* Media queries for responsive design */
-    @media (max-width: 768px) {
-      body {
-        padding: 10px;
-      }
-
-      h1 {
-        font-size: 24px;
-      }
-
-      #clock {
-        font-size: 32px;
-        margin-bottom: 10px;
-      }
-
-      .prayer-time {
-        font-size: 18px;
-        margin-bottom: 5px;
-      }
-    }
-  </style>
+  </script>
+  <meta charset="UTF-8">
+  <title>Noticias del día</title>
+ <button id="toggleResponsive">Activar/Desactivar Adaptación</button>
+  <link rel="stylesheet" href="noticias.css">
 </head>
 <body>
-  <h1>Prayer Clock</h1>
+  <div id="wrapper">
+    <header>
+      <h1>Noticias del día</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Política</a></li>
+          <li><a href="#">Economía</a></li>
+          <li><a href="#">Deportes</a></li>
+          <li><a href="#">Cultura</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <h2>yandex el navegador que no todos conocen</h2>
+        <p class="meta-info">ahmed kassem | 4 de mayo del 2023</p>
+        <img src="imagen1.jpg" alt="Icono del navegador">
+        <p>Este navegador de origen ruso es poco conocido en el resto del mundo. Es un navegador confiable, seguro y rápido, con muchos servicios incluidos como correo electrónico, servicio de almacenamiento en la nube, entre otros.</p>
+        <section id="likes-dislikes">
+          <button class="like-btn">Me gusta</button>
+          <span class="like-count">0</span>
+          <button class="dislike-btn">No me gusta</button>
+          <span class="dislike-count">0</span>
+        </section>
+      </article>
 
-  <div id="clock"></div>
+      <article>
+        <h2>petro revela algo que Duke no pudo hacer junto a Trump</h2>
+        <p class="meta-info">ahmed kassem | 4 de mayo del 2023</p>
+        <img src="imagen2.jpg" alt="Descripción de la imagen">
+        <p>Petro estuvo en España en una entrevista con el medio español El País y reveló que Duke estaba dispuesto a ayudar a Trump a intervenir en Venezuela. Menos mal que no lo hicieron, si se hubiera hecho estaríamos en graves problemas.</p>
+        <section id="likes-dislikes">
+          <button class="like-btn">Me gusta</button>
+          <span class="like-count">0</span>
+          <button class="dislike-btn">No me gusta</button>
+          <span class="dislike-count">0</span>
+        </section>
+      </article>
+       <article>
+	<h2>las protestas en maicao sigen</h2>
+	<img src="imagen de miacao.jpg" alt="ciudadanos protestando en maicao">
+        <p class="meta-info">ahmed kassem | 24 de junio del 2023</p> sigen pidiendo la mejora de los servicios publicos mas especificamente
+	       el agua y la electricidad desde hace dos semanas habian negociado pero no llegaron a un acuerdo que opinan ustedes
+        <p>los ciudadanos de el municipio de maicao la guajira</p>
+       </article>
+        <section id="likes-dislikes">
+          <button class="like-btn">Me gusta</button>
+          <span class="like-count">0</span>
+          <button class="dislike-btn">No me gusta</button>
+          <span class="dislike-count">0</span>
+        </section>
 
-  <div id="prayer-times">
-    <h2>Horarios de los rezos</h2>
-    <div class="prayer-time" id="fajr">Fajr: </div>
-    <div class="prayer-time" id="dhuhr">Dhuhr: </div>
-    <div class="prayer-time" id="asr">Asr: </div>
-    <div class="prayer-time" id="maghrib">Maghrib: </div>
-    <div class="prayer-time" id="isha">Isha: </div>
-  </div>
+      <article>
+        <h2>Se acabó</h2>
+        <p class="meta-info">ahmed kassem | 4 de mayo del 2023</p>
+        <img src="imagen3.jpg" alt="La OMS">
+        <p>La Organización Mundial de la Salud (OMS) hace dos días anunció que el COVID-19 ya no es una emergencia sanitaria. Tiempo después, los gringos van a retirar todas las medidas de emergencia el 10 de mayo. ¿Ustedes qué opinan?</p>
+        <section id="likes-dislikes">
+          <button class="like-btn">Me gusta</button>
+          <span class="like-count">0</span>
+          <button class="dislike-btn">No me gusta</button>
+          <span class="dislike-count">0</span>
+        </section>
+      </article>
 
-  <div id="livestream">
-    <h2>Transmisión en vivo desde La Meca</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/hrnT2IFqyro" frameborder="0" allowfullscreen></iframe>
-  </div>
+      <article>
+        <h2>La coronación de Carlos III</h2>
+        <p class="meta-info">ahmed kassem | 6 de mayo del 2023</p>
+        <img src="imagen4.jpg" alt="El rey Carlos III">
+        <p>El rey Carlos III fue coronado el pasado 6 de mayo en una ceremonia llena de pompa y circunstancia. Esta coronación marca el inicio de una nueva era para el Reino Unido, tras el fallecimiento de su antecesora, la reina Isabel II. Hoy en día, muchos británicos, especialmente los más jóvenes, anhelan el fin de la monarquía británica para convertirse en una república. ¿Ustedes qué opinan?</p>
+        <section id="likes-dislikes">
+          <button class="like-btn">Me gusta</button>
+          <span class="like-count">0</span>
+          <button class="dislike-btn">No me gusta</button>
+          <span class="dislike-count">0</span>
+        </section>
+      </article>
 
-  <script>
-    function updateClock() {
-      var clockElement = document.getElementById('clock');
-      var currentTime = new Date();
-      var hours = currentTime.getHours();
-      var minutes = currentTime.getMinutes();
-      var seconds = currentTime.getSeconds();
+      <article>
+        <h2>el estado de la flota de aviones de combate de la FAC</h2>
+        <p class="meta-info">ahmed kassem | 21 de junio del 2023</p>
+        <img src="imagen5.jpg" alt="f16">
+        <p>la FAC o fuerza aérea colombiana necesita lo antes posible un reemplazo para los aviones de combate actuales por unos más nuevos para poder garantizar la protección del territorio nacional. Mantener los aviones actuales se hará cada vez más costoso. ¿Qué opinan ustedes?</p>
+        <section id="likes-dislikes">
+          <button class="like-btn">Me gusta</button>
+          <span class="like-count">0</span>
+          <button class="dislike-btn">No me gusta</button>
+          <span class="dislike-count">0</span>
+        </section>
+      </article>
 
-      var timeString = formatTime(hours) + ':' + formatTime(minutes) + ':' + formatTime(seconds);
-      clockElement.textContent = timeString;
-    }
+      <article>
+        <h2>la reforma laboral se undió</h2>
+        <p class="meta-info">ahmed kassem | 21 de junio del 2023</p>
+        <img src="imagen6.jpg" alt="el congreso">
+        <p>El Congreso de la República tumbó la reforma laboral desgraciadamente por los derechos laborales. Se necesitan mejores condiciones laborales en todo el país se habia anuciado que volverian a radicar la reforma. ¿Ustedes qué opinan sobre esto?</p>
+        <section id="likes-dislikes">
+          <button class="like-btn">Me gusta</button>
+          <span class="like-count">0</span>
+          <button class="dislike-btn">No me gusta</button>
+          <span class="dislike-count">0</span>
+        </section>
+      </article>
+      <article>
+        <h2>casi un golpe de estado en Rusia </h2>
+        <p class="meta-info">ahmed kassem | 25 de junio del 2023</p>
+        <img src="imageni.jpg"alt="el lider del grupo">
+        <p> en la federacion rusa el grupo Wagner insta sus hombres a marchar hacia moscu para intentar expulsar a la cupula militar luego de que el grupo denunciara que las fuerzas 
+	armadas rusas bombardearan una de sus bases el grupo tomo una ciudad cercana de moscu tiempo despues al borde de la gerra cibil llegaron a un acuerdo con mediacon de el precidente de bielo rusia y se retira a sus bases y todo bolvio a como estaba antes
+	que opinan ustedes que ubiera pasado si no hubiesen llegado a un acuerdo </p>
+        <section id="likes-dislikes">
+          <button class="like-btn">Me gusta</button>
+          <span class="like-count">0</span>
+          <button class="dislike-btn">No me gusta</button>
+          <span class="dislike-count">0</span>
+        </section>
+      </article>
+	  
+      <article>
+        <h2>¡fueron declarados muertos!</h2>
+        <p class="meta-info">ahmed kassem | 23 de junio del 2023</p>
+        <img src="imagen7.jpg" alt="Descripción de la imagen">
+        <p>el sumergible con millonarios abordo ha sido declarado destruido por implocion extrema cerca del titanic
+		segun los guarda costas de los gringos esta operacion de rescate tubo apoyo internacional ahora solo se busca a los cadaveres
+		y al submarino.</p>
+        <section id="likes-dislikes">
+          <button class="like-btn">Me gusta</button>
+          <span class="like-count">0</span>
+          <button class="dislike-btn">No me gusta</button>
+          <span class="dislike-count">0</span>
+        </section>
+      </article>
+    </main>
 
-    function formatTime(time) {
-      return time < 10 ? '0' + time : time;
-    }
+    <aside>
+      <h2>Últimas noticias</h2>
+      <ul>
+        <li><a href="#">Oferta al Ministerio de Defensa</a></li>
+	 <li><a href="#">casi un golpe de estado en Rusia</a></li>
+        <li><a href="#">Las estaciones de policía están sobrepasadas de detenidos</a></li>
+        <li><a href="#">la tripulacion del submarino titan ha sido declarada muerta por inplocion en el submarino cerca del titanic las labores de rescate continuan para rescatar el submarino y a los cadáveres se acaba de revelar que el submarino literalmentee sta en mil pedazos por la implocion a la profundidad que desapareció</a></li>
+        <li><a href="#">Se cumplen 2 semanas de protesta por el agua en una sucursal de Aguas de la Península en Maicao, La Guajira, y apenas ayer 17 de junio empezaron las negociaciones para el restablecimiento de esta en algunas partes de la ciudad</a></li>
+        <li><a href="#">El Congreso de la República aprueba una reforma para que la educación superior en universidades públicas sea gratis. En mi opinión, esto beneficia al pueblo en su mayoría para tener mejor acceso a la universidad y obtener una educación superior de calidad.</a></li>
+      </ul>
+    </aside>
 
-    function updatePrayerTimes() {
-      var prayerTimes = {
-        fajr: { hour: 4, minute: 11 },
-        dhuhr: { hour: 11, minute: 52 },
-        asr: { hour: 15, minute: 19 },
-        maghrib: { hour: 18, minute: 16 },
-        isha: { hour: 19, minute: 29 }
-      };
+    <section id="redes-sociales">
+      <h2>Sígueme en redes sociales</h2>
+      <ul>
+        <li><a href="https://www.tiktok.com/@akcraft2004">TikTok</a></li>
+        <li><a href="https://twitter.com/kassem_craft?s=09">Twitter</a></li>
+      </ul>
 
-      var currentPrayer = null;
-      var currentTime = new Date();
-      var currentHour = currentTime.getHours();
-      var currentMinute = currentTime.getMinutes();
-
-      for (var prayer in prayerTimes) {
-        var prayerTime = prayerTimes[prayer];
-        var prayerElement = document.getElementById(prayer);
-
-        var hour = prayerTime.hour;
-        var minute = prayerTime.minute;
-
-        var formattedHour = formatTime(hour);
-        var formattedMinute = formatTime(minute);
-
-        prayerElement.textContent = prayerElement.textContent.split(':')[0] + ': ' + formattedHour + ':' + formattedMinute;
-
-        if (currentHour === hour && currentMinute === minute) {
-          prayerElement.style.color = 'green';
-          currentPrayer = prayerElement.textContent.split(':')[0];
-        } else if (currentHour > hour || (currentHour === hour && currentMinute > minute)) {
-          prayerElement.style.color = 'red';
-        } else {
-          prayerElement.style.color = 'white';
-        }
-      }
-
-      if (currentPrayer && !isNotificationShown()) {
-        showNotification('Es hora de ' + currentPrayer + '!');
-        playAlarmSound();
-        markNotificationShown();
-      }
-    }
-
-    function showNotification(message) {
-      if ('Notification' in window && Notification.permission === 'granted') {
-        var notification = new Notification('Prayer Clock', {
-          body: message,
-          icon: 'notification.png'
-        });
-      }
-    }
-
-    function requestNotificationPermission() {
-      if ('Notification' in window && Notification.permission !== 'granted') {
-        Notification.requestPermission();
-      }
-    }
-
-    function playAlarmSound() {
-      var audio = new Audio('alarmsound.mp3');
-      audio.play();
-    }
-
-    function isNotificationShown() {
-      return localStorage.getItem('notificationShown') === 'true';
-    }
-
-    function markNotificationShown() {
-      localStorage.setItem('notificationShown', 'true');
-    }
-
-    setInterval(updateClock, 1000);
-    setInterval(updatePrayerTimes, 1000);
-    requestNotificationPermission();
-  </script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('service-worker.js')
-          .then(function(registration) {
-            console.log('Service Worker registrado con éxito:', registration);
-          })
-          .catch(function(error) {
-            console.log('Error al registrar el Service Worker:', error);
-          });
-      });
-    }
-  </script>
+    <footer>
+      <p>&copy; 2023 Noticias del Día. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
